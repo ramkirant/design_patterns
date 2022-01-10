@@ -142,6 +142,9 @@ Methods in Iterator:
 
 getIterator is a factory method which makes the Iterable class a factory class? 
 
+![Picture1](https://user-images.githubusercontent.com/65855896/148752119-11489d2e-7311-4986-be4b-4f226aa4cbe7.jpg)
+
+
 Client uses Iterable and Iterator.
  
 ### Mediator Pattern

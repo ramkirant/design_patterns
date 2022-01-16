@@ -152,5 +152,14 @@ Client uses Iterable and Iterator.
 ### Observer Pattern
 ### State Pattern
 ### Strategy Pattern
+Strategy pattern solves the composition problem (Code duplication) that is introduced by Inheritance. If multiple sub classes of a parent class has the same implementation of a parent method that is different from the parent method, we can only achieve this by duplicating the code in each of the sub classes. 
+
+Strategy pattern solves the above problem. Strategy pattern decouples the behavior from objects. In Strategy pattern, we identify different and unique types of behaviors that all the child classes can possess and we define them in the implementations of a separate strategy interface. We plugin the strategy interface in the parent class instead of the behavior methods.
+
+We can further extend the strategy pattern by providing strategies for every method available in the parent class. By doing so, we will be eliminating the need to define concrete sub classes and we eliminate the entire need for inheritance itself. We will be eliminating the inheritance and replacing it with max and max of multiple strategy classes, with each mix and max defining a separate concrete class. 
+
+Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangable. Strategy lets the algorithms vary independently from the clients that use it. 
+Strategy pattern decouples the algorithms from the client that use it.
+Strategy pattern is about using composition rather than inheritance. Inheritance is not intended for code reuse. 
 ### Template Pattern
 ### Visitor Pattern

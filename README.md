@@ -161,5 +161,8 @@ We can further extend the strategy pattern by providing strategies for every met
 Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangable. Strategy lets the algorithms vary independently from the clients that use it. 
 Strategy pattern decouples the algorithms from the client that use it.
 Strategy pattern is about using composition rather than inheritance. Inheritance is not intended for code reuse. 
+
+![Strtegy](https://user-images.githubusercontent.com/65855896/149647227-aa5c971e-207e-4046-9e84-3309fd46252f.jpg)
+
 ### Template Pattern
 ### Visitor Pattern

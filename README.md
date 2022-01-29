@@ -97,6 +97,9 @@ Virtual Proxy controls access to a resource that is expensive to create. Virtual
 3. Protection Proxy
 Protection proxy can be used to control access management. Protection proxy provides access to user only the items that the user has access to. 
 
+![Proxy](https://user-images.githubusercontent.com/65855896/151659314-e4a9be4d-f275-4982-965f-ad92abb9cef9.jpg)
+
+
 ## Behaviorial Deisgn Patterns
 ### Chain of Responsibility Pattern
 Chain of Responsibility Pattern creates a chain of receiver objects. In this pattern, generally, a receiver contains a reference to the next receiver. If the current receiver is not able to handle the request, the request is sent to the next Receiver. (Check code for implementation)
@@ -170,6 +173,10 @@ Observer Patter defines a one to many dependency between objects so that, when o
 Observer Pattern can be used when the change in the state of an entity needs to be notified to range of subscribers. 
 
 Observer Pattern mandates that the entity (Observable) needs to PUSH the change in state to the subscribers (Observers) rather than the observers POLL the observable to check the change in state.
+
+![Observer](https://user-images.githubusercontent.com/65855896/151659438-c80e2c30-7b97-4483-87af-a594b64e3cdb.jpg)
+
+
 ### State Pattern
 State Pattern allows an object to change its behavior when its internal state changes. The object will appear to change its class at runtime. 
 State Pattern contains an object that behaves differently based on the state it is. In state pattern we replace a conditional with polymorphism. 
@@ -179,6 +186,8 @@ State Pattern can be used when we have an object which can be in different state
 In State Pattern, we delegate actions from the object to the state (interface) by defining each of the action in both the object and the interface. By doing so, we will force all the the different states (implementations of the state interface) to implement each and everyone of the actions. So, if any state don't handle any of the action, a compile error is thrown.
 
 In the below UML Diagram, The Context is the object that can change states
+
+![State](https://user-images.githubusercontent.com/65855896/151659482-13ce81d4-44a1-4aab-85de-fb9da5091e49.jpg)
 
 
 ### Strategy Pattern
@@ -208,6 +217,10 @@ We can implement template pattern by defining an abstract super class. This abst
 Use template method pattern only when it is absolutely required. Use this pattern only if you are absolutely sure that the algorithm contains both non-variant parts and variant parts. Also, almost, all use cases of template pattern can be achieved using strategy pattern. We can make each non-variant and variant part of the code as a strategy. 
 
 Another disadvantage of template pattern is that, we are using one slot of inheritance. If the language we code don't allow multiple inheritance, we will not be able to inherit any other super class.
+
+![TemplateMethod](https://user-images.githubusercontent.com/65855896/151659374-713e8236-b373-4a44-966f-f3f1807836f5.jpg)
+
+
 ### Visitor Pattern
 
 # Some cool stuff

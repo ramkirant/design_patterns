@@ -16,6 +16,8 @@ When we have to choose between a group of similar objects as per a certain crite
 ### Abstract Factory Pattern
 Abstract Factory Pattern is also called as factory of factories. While factory pattern returns from a group of similar objects, abstract factory pattern returns from a group of similar factories. 
 
+Abstract Factory can be used when we have to use platform specific classes. For example, let us assume we have a factory of UI objects. We can create an abstract factory which contains factories of different operating system specific objects. We can have a factory of Windows UI objects and another factory of Mac OS UI Objects. We can create an abstract factory which returns either windows factory or Mac OS factory depending upon the OS.
+
 ### Singleton Pattern
 As per singleton pattern, we create a class that has only one instance to it and provide a global point of access to it. In other words, the class should ensure that only a single instance of it is created and used by all other classes. There are two types of singleton design patter
 1. Early Instantiation
@@ -81,6 +83,19 @@ Facade Pattern hides the complexities of the system and provides an interface to
 ### Flyweight Pattern
 
 ### Proxy Pattern
+Proxy pattern provides a surrogate or a placeholder for another object to control access to it. 
+
+Using Proxy pattern, we interact with an object, by not directly using it, but by using another object which acts as a proxy to that object. 
+
+Proxy pattern solves access related problems. By keeping a proxy in front of another object, we control how to access the object. 
+
+There are three ways we can use proxy pattern.
+1. Remote Proxy
+Remote Proxy can be used to access an object that is remote. We can use this proxy to access an object that is on other server or on other namespace.
+2. Virtual Proxy
+Virtual Proxy controls access to a resource that is expensive to create. Virtual proxy is like caching. After retrieving an expensive object, we cache the object such that further retrievals of the object can happen from the cache.
+3. Protection Proxy
+Protection proxy can be used to control access management. Protection proxy provides access to user only the items that the user has access to. 
 
 ## Behaviorial Deisgn Patterns
 ### Chain of Responsibility Pattern
@@ -150,11 +165,26 @@ Client uses Iterable and Iterator.
 ### Mediator Pattern
 ### Memento Pattern
 ### Observer Pattern
+Observer Patter defines a one to many dependency between objects so that, when one object changes, all of its dependent objects are notified and updated automaticlly.
+
+Observer Pattern can be used when the change in the state of an entity needs to be notified to range of subscribers. 
+
+Observer Pattern mandates that the entity (Observable) needs to PUSH the change in state to the subscribers (Observers) rather than the observers POLL the observable to check the change in state.
 ### State Pattern
+State Pattern allows an object to change its behavior when its internal state changes. The object will appear to change its class at runtime. 
+State Pattern contains an object that behaves differently based on the state it is. In state pattern we replace a conditional with polymorphism. 
+
+State Pattern can be used when we have an object which can be in different states and there are multiple actions which can move the object between different states.
+
+In State Pattern, we delegate actions from the object to the state (interface) by defining each of the action in both the object and the interface. By doing so, we will force all the the different states (implementations of the state interface) to implement each and everyone of the actions. So, if any state don't handle any of the action, a compile error is thrown.
+
+In the below UML Diagram, The Context is the object that can change states
+
+
 ### Strategy Pattern
 Strategy pattern solves the composition problem (Code duplication) that is introduced by Inheritance. If multiple sub classes of a parent class has the same implementation of a parent method that is different from the parent method, we can only achieve this by duplicating the code in each of the sub classes. 
 
-Strategy pattern solves the above problem. Strategy pattern decouples the behavior from objects. In Strategy pattern, we identify different and unique types of behaviors that all the child classes can possess and we define them in the implementations of a separate strategy interface. We plugin the strategy interface in the parent class instead of the behavior methods.
+Strategy pattern solves the above problem. Strategy pattern decouples the behavior from objects. In Strategy pattern, we identify different and unique types of behaviors that all the child classes can possess and we define them in the implementations of a separate strategy interface. We plug-in the strategy interface in the parent class instead of the behavior methods.
 
 We can further extend the strategy pattern by providing strategies for every method available in the parent class. By doing so, we will be eliminating the need to define concrete sub classes and we eliminate the entire need for inheritance itself. We will be eliminating the inheritance and replacing it with max and max of multiple strategy classes, with each mix and max defining a separate concrete class. 
 
@@ -165,4 +195,24 @@ Strategy pattern is about using composition rather than inheritance. Inheritance
 ![Strtegy](https://user-images.githubusercontent.com/65855896/149647227-aa5c971e-207e-4046-9e84-3309fd46252f.jpg)
 
 ### Template Pattern
+The Template method pattern defines the skeleton of an algorithm, deferring some steps to subclasses. Template method pattern lets the subclasses redefine certain parts of the algorithm without altering the algorithm structure.
+
+Template method pattern is used when some of the portions of the algorithm do not vary across sub classes. The not-varying part of the algorithm is defined in the base class ad the varying part of the algorithm is defined in the sub classes. 
+ 
+Template pattern is a pattern about a method, which is not actually a method, but a template method. Template method is a method with some slots missing. These slots are required to be filled by the clients. As the clients fill these slots, the template method, becomes an actual method. 
+
+Template pattern can be used when we have to design components which contains two types of parts, one that vary and one that don't vary. We create a template with the non varying parts and the clients fill in the varying parts. By creating a template for non varying parts, we would avoid duplication of code. 
+
+We can implement template pattern by defining an abstract super class. This abstract super class will have the template method and a set of abstract methods which would be implemented by the super classes. Template method will call these abstract methods along with its own code non-varying code. We can make the template method as final so that its logic will not be modified by the sub classes.
+
+Use template method pattern only when it is absolutely required. Use this pattern only if you are absolutely sure that the algorithm contains both non-variant parts and variant parts. Also, almost, all use cases of template pattern can be achieved using strategy pattern. We can make each non-variant and variant part of the code as a strategy. 
+
+Another disadvantage of template pattern is that, we are using one slot of inheritance. If the language we code don't allow multiple inheritance, we will not be able to inherit any other super class.
 ### Visitor Pattern
+
+# Some cool stuff
+## Premature optimization
+Don't try to solve a performance problem before we encounter the performance problem. 
+
+## Code Readability Paradox
+The more readable the code is, the less performant it would be. The more performant a code is, the less readable it would be.
